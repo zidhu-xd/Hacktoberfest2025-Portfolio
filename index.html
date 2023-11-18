@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+/*  */
+
+.slider {
+    padding: 0px;
+  position: relative;
+  font-size: 1em;
+  margin: 0px;
+}
+
+.slider .slides .item {
+  position: relative;
+  display: none;
+}
+
+.slider .slides .item img {
+  width: 100%;
+  height: 400px;
+}
+
+.slider .slides .active {
+  display: block;
+}
+
+.slider .buttons {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  z-index: 1;
+}
+
+.slider .buttons i {
+  color: white;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.slider .buttons i:hover {
+  color: rgba(255, 255, 255, 0.4);
+}
+    
+/*  */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #555;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    #contactForm {
+      margin-top: 20px;
+    }
+
+    #tictac {
+        
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* justify-content: center; */
+      /* height: 100vh; */
+    } 
+    .board {
+      display:grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 4px;
+      padding: 4px;
+      
+      
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+<body>
+    <header>
+        <section class="slider">
+          <div class="slides">
+            <div class="item active" id="slide1">
+              <img src="Dragon Ball Z Kakarot 2.jpg" alt="slide1" />
+            </div>
+            <div class="item" id="slide2">
+              <img src="Lunar New Year 2023 7.png" alt="slide2" />
+            </div>
+            <div class="item" id="slide3">
+              <img src="Lunar New Year 2023 10.png" alt="slide3" />
+            </div>
+          </div>
+          <div class="buttons">
+            <i onclick="slider('slide1')" class="fas fa-circle" aria-hidden="true">o</i>
+            <i onclick="slider('slide2')" class="fas fa-circle" aria-hidden="true">o</i>
+            <i onclick="slider('slide3')" class="fas fa-circle" aria-hidden="true">o</i>
+          </div>
+        </section>
+      </header>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+      </header>
+    
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    
+      <section id="home">
+        <h2>Welcome to Our Website</h2>
+        <p>Explore our dynamic and professional services.</p>
+        <div id="tictac">
+            <h1>Tic Tac Toe</h1>
+            <p id="turn-info"></p>
+            <button onclick="startGame()">Start Game</button>
+          
+            <div class="board" id="board"></div>
+          
+            <script>
+              const board = document.getElementById("board");
+              const cells = [];
+              let currentPlayer = "";
+              let playerSymbol = "X";
+              let computerSymbol = "O";
+              let gameActive = false;
+          
+              function startGame() {
+                gameActive = true;
+          
+                // Randomly decide who starts
+                if (Math.random() < 0.5) {
+                  currentPlayer = "Player's";
+                } else {
+                  currentPlayer = "Computer's";
+                  setTimeout(computerMove, 500);
+                }
+          
+                document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
+          
+                cells.forEach((cell) => (cell.textContent = ""));
+              }
+          
+              for (let i = 0; i < 9; i++) {
+                const cell = document.createElement("div");
+                cell.className = "cell";
+                cells.push(cell);
+                board.appendChild(cell);
+          
+                cell.addEventListener("click", () => {
+                  if (cell.textContent === "" && currentPlayer === "Player's" && gameActive) {
+                    cell.textContent = playerSymbol;
+                    if (checkWinner(playerSymbol)) {
+                      alert("Player wins!");
+                      resetBoard();
+                    } else if (cells.every((cell) => cell.textContent !== "")) {
+                      alert("It's a draw!");
+                      resetBoard();
+                    } else {
+                      currentPlayer = "Computer's";
+                      document.getElementById("turn-info").textContent = `${currentPlayer} turn`;
+                      setTimeout(computerMove, 500);
+                    }
+                  }
+                });
+              }
+          
+              function checkWinner(player) {
+                const winningCombinations = [
+                  [0, 1, 2],
+                  [3, 4, 5],
+                  [6, 7, 8],
+                  [0, 3, 6],
+                  [1, 4, 7],
+                  [2, 5, 8],
+                  [0, 4, 8],
+                  [2, 4, 6],
+                ];
+          
+                return winningCombinations.some((combination) =>
+                  combination.every((index) => cells[index].textContent === player)
+                );
+              }
+          
+              function computerMove() {
+                if (!gameActive) return;
+          
+                const emptyCells = cells.filter((cell) => cell.textContent === "");
+                if (emptyCells.length > 0) {
+                  const bestMove = findBestMove();
+                  cells[bestMove].textContent = computerSymbol;
+          
+                  if (checkWinner(computerSymbol)) {
+                    alert("Computer wins!");
+                    resetBoard();
+                  } else if (cells.every((cell) => cell.textContent !== "")) {
+                    alert("It's a draw!");
+                    resetBoard();
+                  }
+                }
+                currentPlayer = "Player's";
+                document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
+              }
+          
+              function resetBoard() {
+                gameActive = false;
+                cells.forEach((cell) => (cell.textContent = ""));
+                currentPlayer = "Player's";
+                document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
+              }
+          
+              function minimax(board, depth, isMaximizing) {
+                const scores = {
+                  X: -1,
+                  O: 1,
+                  draw: 0,
+                };
+          
+                const result = checkWin(board);
+                if (result !== null) {
+                  return scores[result];
+                }
+          
+                if (isMaximizing) {
+                  let bestScore = -Infinity;
+                  for (let i = 0; i < 9; i++) {
+                    if (board[i] === "") {
+                      board[i] = computerSymbol;
+                      const score = minimax(board, depth + 1, false);
+                      board[i] = "";
+                      bestScore = Math.max(score, bestScore);
+                    }
+                  }
+                  return bestScore;
+                } else {
+                  let bestScore = Infinity;
+                  for (let i = 0; i < 9; i++) {
+                    if (board[i] === "") {
+                      board[i] = playerSymbol;
+                      const score = minimax(board, depth + 1, true);
+                      board[i] = "";
+                      bestScore = Math.min(score, bestScore);
+                    }
+                  }
+                  return bestScore;
+                }
+              }
+          
+              function findBestMove() {
+                let bestScore = -Infinity;
+                let bestMove = -1;
+          
+                for (let i = 0; i < 9; i++) {
+                  if (cells[i].textContent === "") {
+                    cells[i].textContent = computerSymbol;
+                    const score = minimax(cells.map((cell) => cell.textContent), 0, false);
+                    cells[i].textContent = "";
+                    if (score > bestScore) {
+                      bestScore = score;
+                      bestMove = i;
+                    }
+                  }
+                }
+          
+                return bestMove;
+              }
+          
+              function checkWin(board) {
+                const winningCombinations = [
+                  [0, 1, 2],
+                  [3, 4, 5],
+                  [6, 7, 8],
+                  [0, 3, 6],
+                  [1, 4, 7],
+                  [2, 5, 8],
+                  [0, 4, 8],
+                  [2, 4, 6],
+                ];
+          
+                for (const combination of winningCombinations) {
+                  const [a, b, c] = combination;
+                  if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                    return board[a];
+                  }
+                }
+          
+                if (board.every((cell) => cell !== "")) {
+                  return "draw";
+                }
+          
+                return null;
+              }
+              function slider(input) {
+  const item = document.querySelector(`#${input}`);
+  const slideArr = [...document.querySelector(".slides").children];
+  slideArr.forEach((element) => element.classList.remove("active"));
+  item.classList.add("active");
+}
+
+let slideIndex = 1;
+setInterval(() => {
+  slideIndex++;
+  if (slideIndex === 4) slideIndex = 1;
+  slider(`slide${slideIndex}`);
+}, 2000);
+
+</script>
+
+            </script>
+            </div>
+      </section>
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <div id="contactForm">
+          <label for="message">Your Message:</label>
+          <textarea id="message" rows="4" cols="50"></textarea>
+          <button onclick="sendMessage()">Send Message</button>
+        </div>
+      </section>
+    
+      <footer>
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+      </footer>
+    
+</body>
+</html>
