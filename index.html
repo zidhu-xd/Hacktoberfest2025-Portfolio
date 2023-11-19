@@ -8,11 +8,12 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      background-color: rgb(19, 0, 75);
     }
 /*  */
 
 .slider {
-    padding: 0px;
+  padding: 0px;
   position: relative;
   font-size: 1em;
   margin: 0px;
@@ -25,7 +26,8 @@
 
 .slider .slides .item img {
   width: 100%;
-  height: 400px;
+  height: 600px;
+  object-fit: cover;
 }
 
 .slider .slides .active {
@@ -50,18 +52,48 @@
 }
     
 /*  */
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #555;
-      padding: 0.5rem;
-    }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 1rem;
-    }
+/* nav bar */
+.container {
+  overflow: hidden;
+  background-color: black;
+  text-align: center;
+  position: relative; /* Start with relative positioning */
+  width: 100%;
+  z-index: 1000;
+  transition: position 0.3s; /* Add a smooth transition effect */
+}
+
+.container a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.container a::before {
+  content: '';
+  width: 0%;
+  height: 3px;
+  display: block;
+  background-color: #fff;
+  margin-bottom: 1px;
+}
+
+.container a:hover::before {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.fixed {
+  position: fixed; /* Change to fixed when it becomes sticky */
+  top: 0;
+}
+
+/*  */
+
 
     section {
       padding: 2rem;
@@ -111,37 +143,41 @@
         <section class="slider">
           <div class="slides">
             <div class="item active" id="slide1">
-              <img src="Dragon Ball Z Kakarot 2.jpg" alt="slide1" />
+              <img src="./img/memount.jpg" alt="slide1" />
             </div>
             <div class="item" id="slide2">
-              <img src="Lunar New Year 2023 7.png" alt="slide2" />
+              <img src="./img/symposium1.png" alt="slide2" />
             </div>
             <div class="item" id="slide3">
-              <img src="Lunar New Year 2023 10.png" alt="slide3" />
+              <img src="./img/symposium2.jpg" alt="slide3" />
+            </div>
+            <div class="item" id="slide4">
+              <img src="./img/d3fest2.jpg" alt="slide4" />
+            </div>
+            <div class="item" id="slide5">
+              <img src="./img/IMG-20230425-WA0033.jpg" alt="slide5" />
+            </div>
+            <div class="item" id="slide6">
+              <img src="./img/innovateodisha.JPG" alt="slide6" />
             </div>
           </div>
           <div class="buttons">
             <i onclick="slider('slide1')" class="fas fa-circle" aria-hidden="true">o</i>
             <i onclick="slider('slide2')" class="fas fa-circle" aria-hidden="true">o</i>
             <i onclick="slider('slide3')" class="fas fa-circle" aria-hidden="true">o</i>
+            <i onclick="slider('slide4')" class="fas fa-circle" aria-hidden="true">o</i>
+            <i onclick="slider('slide5')" class="fas fa-circle" aria-hidden="true">o</i>
+            <i onclick="slider('slide6')" class="fas fa-circle" aria-hidden="true">o</i>
           </div>
         </section>
       </header>
-            <br>
-            
-            <div style="text-align:center">
-              <span class="dot"></span> 
-              <span class="dot"></span> 
-              <span class="dot"></span> 
-            </div>
-      </header>
     
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="container">
+        <a href="#">Home<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#">About<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#">Projects and Achivements<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#">Contact<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+      </div>
     
       <section id="home">
         <h2>Welcome to Our Website</h2>
@@ -152,7 +188,7 @@
             <button onclick="startGame()">Start Game</button>
           
             <div class="board" id="board"></div>
-          
+         
             <script>
               const board = document.getElementById("board");
               const cells = [];
@@ -327,20 +363,31 @@
                 return null;
               }
               function slider(input) {
-  const item = document.querySelector(`#${input}`);
-  const slideArr = [...document.querySelector(".slides").children];
-  slideArr.forEach((element) => element.classList.remove("active"));
-  item.classList.add("active");
-}
+                        const item = document.querySelector(`#${input}`);
+                        const slideArr = [...document.querySelector(".slides").children];
+                        slideArr.forEach((element) => element.classList.remove("active"));
+                        item.classList.add("active");
+                      }
 
-let slideIndex = 1;
-setInterval(() => {
-  slideIndex++;
-  if (slideIndex === 4) slideIndex = 1;
-  slider(`slide${slideIndex}`);
-}, 2000);
+                      let slideIndex = 1;
+                      setInterval(() => {
+                        slideIndex++;
+                        if (slideIndex === 7) 
+                        slideIndex = 1;
+                        slider(`slide${slideIndex}`);
+                      }, 2000);
+                      document.addEventListener("DOMContentLoaded", function () {
+                            var container = document.querySelector(".container");
+                            var scrollThreshold = container.offsetTop;
 
-</script>
+                            window.addEventListener("scroll", function () {
+                              if (window.pageYOffset > scrollThreshold) {
+                                container.classList.add("fixed");
+                              } else {
+                                container.classList.remove("fixed");
+                              }
+                            });
+                          });
 
             </script>
             </div>
