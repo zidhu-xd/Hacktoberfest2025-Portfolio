@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tic Tac Toe</title>
+  <title>Rajeev Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/RoHHRufzfT5zCFa/VcQFaBxFbF6d4Vm1tAR9" crossorigin="anonymous">
+
   <style>
+#home {
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: opacity 2s, transform 2s;
+  text-align: center;
+}
+
+#home.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+      html {
+  scroll-behavior: smooth;
+}
+    
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      background-color: rgb(19, 0, 75);
+      background-color: rgb(255, 255, 255);
     }
 /*  */
 
@@ -26,7 +67,7 @@
 
 .slider .slides .item img {
   width: 100%;
-  height: 600px;
+  height: 800px;
   object-fit: cover;
 }
 
@@ -58,10 +99,10 @@
   overflow: hidden;
   background-color: black;
   text-align: center;
-  position: relative; /* Start with relative positioning */
+  position: relative; 
   width: 100%;
   z-index: 1000;
-  transition: position 0.3s; /* Add a smooth transition effect */
+  transition: position 0.3s; 
 }
 
 .container a {
@@ -88,7 +129,7 @@
 }
 
 .fixed {
-  position: fixed; /* Change to fixed when it becomes sticky */
+  position: fixed; 
   top: 0;
 }
 
@@ -136,10 +177,76 @@
       cursor: pointer;
     }
     
+
+
+    /* 0 */
+   
+
+
+#home.active .image-container {
+  right: 0; 
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.text-content {
+  text-align: center;
+  z-index: 1;
+  padding-right: 20px; 
+}
+table {
+      width: 100%;
+      table-layout: fixed; 
+    }
+    /*  */
+
+
+    @media only screen and (max-width: 768px) {
+      .container {
+        position: static;
+      }
+      .container a::before {
+        width: 0%;
+      }
+      .fixed {
+        position: static;
+      }
+      #home {
+        padding-top: 50px; 
+      }
+      .slider .buttons {
+        bottom: 10px;
+        left: 10px;
+      }
+      .text-content {
+        padding-right: 0;
+      }
+      .content-container {
+        flex-direction: column;
+      }
+      .image-container {
+        margin-top: 20px;
+      }
+      .slider .slides .item img {
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
-    <header>
+    <header id="header">
         <section class="slider">
           <div class="slides">
             <div class="item active" id="slide1">
@@ -173,225 +280,53 @@
       </header>
     
       <div class="container">
-        <a href="#">Home<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#header">Home<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
         <a href="#">About<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
         <a href="#">Projects and Achivements<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
-        <a href="#">Contact<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#tictac">Game<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#contact">Contact<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
       </div>
     
+
+
       <section id="home">
-        <h2>Welcome to Our Website</h2>
-        <p>Explore our dynamic and professional services.</p>
-        <div id="tictac">
-            <h1>Tic Tac Toe</h1>
-            <p id="turn-info"></p>
-            <button onclick="startGame()">Start Game</button>
-          
-            <div class="board" id="board"></div>
+
+        <table >
+          <th></th>
          
-            <script>
-              const board = document.getElementById("board");
-              const cells = [];
-              let currentPlayer = "";
-              let playerSymbol = "X";
-              let computerSymbol = "O";
-              let gameActive = false;
-          
-              function startGame() {
-                gameActive = true;
-          
-                // Randomly decide who starts
-                if (Math.random() < 0.5) {
-                  currentPlayer = "Player's";
-                } else {
-                  currentPlayer = "Computer's";
-                  setTimeout(computerMove, 500);
-                }
-          
-                document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
-          
-                cells.forEach((cell) => (cell.textContent = ""));
-              }
-          
-              for (let i = 0; i < 9; i++) {
-                const cell = document.createElement("div");
-                cell.className = "cell";
-                cells.push(cell);
-                board.appendChild(cell);
-          
-                cell.addEventListener("click", () => {
-                  if (cell.textContent === "" && currentPlayer === "Player's" && gameActive) {
-                    cell.textContent = playerSymbol;
-                    if (checkWinner(playerSymbol)) {
-                      alert("Player wins!");
-                      resetBoard();
-                    } else if (cells.every((cell) => cell.textContent !== "")) {
-                      alert("It's a draw!");
-                      resetBoard();
-                    } else {
-                      currentPlayer = "Computer's";
-                      document.getElementById("turn-info").textContent = `${currentPlayer} turn`;
-                      setTimeout(computerMove, 500);
-                    }
-                  }
-                });
-              }
-          
-              function checkWinner(player) {
-                const winningCombinations = [
-                  [0, 1, 2],
-                  [3, 4, 5],
-                  [6, 7, 8],
-                  [0, 3, 6],
-                  [1, 4, 7],
-                  [2, 5, 8],
-                  [0, 4, 8],
-                  [2, 4, 6],
-                ];
-          
-                return winningCombinations.some((combination) =>
-                  combination.every((index) => cells[index].textContent === player)
-                );
-              }
-          
-              function computerMove() {
-                if (!gameActive) return;
-          
-                const emptyCells = cells.filter((cell) => cell.textContent === "");
-                if (emptyCells.length > 0) {
-                  const bestMove = findBestMove();
-                  cells[bestMove].textContent = computerSymbol;
-          
-                  if (checkWinner(computerSymbol)) {
-                    alert("Computer wins!");
-                    resetBoard();
-                  } else if (cells.every((cell) => cell.textContent !== "")) {
-                    alert("It's a draw!");
-                    resetBoard();
-                  }
-                }
-                currentPlayer = "Player's";
-                document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
-              }
-          
-              function resetBoard() {
-                gameActive = false;
-                cells.forEach((cell) => (cell.textContent = ""));
-                currentPlayer = "Player's";
-                document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
-              }
-          
-              function minimax(board, depth, isMaximizing) {
-                const scores = {
-                  X: -1,
-                  O: 1,
-                  draw: 0,
-                };
-          
-                const result = checkWin(board);
-                if (result !== null) {
-                  return scores[result];
-                }
-          
-                if (isMaximizing) {
-                  let bestScore = -Infinity;
-                  for (let i = 0; i < 9; i++) {
-                    if (board[i] === "") {
-                      board[i] = computerSymbol;
-                      const score = minimax(board, depth + 1, false);
-                      board[i] = "";
-                      bestScore = Math.max(score, bestScore);
-                    }
-                  }
-                  return bestScore;
-                } else {
-                  let bestScore = Infinity;
-                  for (let i = 0; i < 9; i++) {
-                    if (board[i] === "") {
-                      board[i] = playerSymbol;
-                      const score = minimax(board, depth + 1, true);
-                      board[i] = "";
-                      bestScore = Math.min(score, bestScore);
-                    }
-                  }
-                  return bestScore;
-                }
-              }
-          
-              function findBestMove() {
-                let bestScore = -Infinity;
-                let bestMove = -1;
-          
-                for (let i = 0; i < 9; i++) {
-                  if (cells[i].textContent === "") {
-                    cells[i].textContent = computerSymbol;
-                    const score = minimax(cells.map((cell) => cell.textContent), 0, false);
-                    cells[i].textContent = "";
-                    if (score > bestScore) {
-                      bestScore = score;
-                      bestMove = i;
-                    }
-                  }
-                }
-          
-                return bestMove;
-              }
-          
-              function checkWin(board) {
-                const winningCombinations = [
-                  [0, 1, 2],
-                  [3, 4, 5],
-                  [6, 7, 8],
-                  [0, 3, 6],
-                  [1, 4, 7],
-                  [2, 5, 8],
-                  [0, 4, 8],
-                  [2, 4, 6],
-                ];
-          
-                for (const combination of winningCombinations) {
-                  const [a, b, c] = combination;
-                  if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-                    return board[a];
-                  }
-                }
-          
-                if (board.every((cell) => cell !== "")) {
-                  return "draw";
-                }
-          
-                return null;
-              }
-              function slider(input) {
-                        const item = document.querySelector(`#${input}`);
-                        const slideArr = [...document.querySelector(".slides").children];
-                        slideArr.forEach((element) => element.classList.remove("active"));
-                        item.classList.add("active");
-                      }
+          <th>
+            <div class="content-container">
+              <div class="text-content">
+                <h2>Welcome to Our Website</h2>
+                <p>Explore our dynamic and professional services.</p>
+              </div>
+          </th>
 
-                      let slideIndex = 1;
-                      setInterval(() => {
-                        slideIndex++;
-                        if (slideIndex === 7) 
-                        slideIndex = 1;
-                        slider(`slide${slideIndex}`);
-                      }, 2000);
-                      document.addEventListener("DOMContentLoaded", function () {
-                            var container = document.querySelector(".container");
-                            var scrollThreshold = container.offsetTop;
+          <th>
+              <div class="image-container" id="rightSlideImage">
+                <img src="./img/photo_2022-06-26_00-55-57.jpg" alt="Your Image">
+              </div>
+          </th>
 
-                            window.addEventListener("scroll", function () {
-                              if (window.pageYOffset > scrollThreshold) {
-                                container.classList.add("fixed");
-                              } else {
-                                container.classList.remove("fixed");
-                              }
-                            });
-                          });
+            <th></th>
+            </table>
+</section>
 
-            </script>
-            </div>
-      </section>
+<section>
+  <div class="tictac-content" id="tictac">
+    <h1>Tic Tac Toe</h1>
+    <p id="turn-info"></p>
+    <button onclick="startGame()">Start Game</button>
+    <div class="board" id="board"></div>
+    <script src="./index.js"></script>
+  </div>
+</div>
+</section>
+      
+      
+
+
+
       <section id="contact">
         <h2>Contact Us</h2>
         <div id="contactForm">
@@ -400,6 +335,7 @@
           <button onclick="sendMessage()">Send Message</button>
         </div>
       </section>
+
     
       <footer>
         <p>&copy; 2023 Your Company. All rights reserved.</p>
