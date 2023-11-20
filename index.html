@@ -49,7 +49,8 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-color: rgb(255, 255, 255);
+        /* background-color: rgb(255, 255, 255); */
+        background-image: url(./img/Lunar\ New\ Year\ 2023\ 10.png);
       }
   /*  */
   
@@ -89,7 +90,7 @@
   }
   
   .slider .buttons i:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(173, 42, 42, 0.4);
   }
       
   /*  */
@@ -97,7 +98,8 @@
   /* nav bar */
   .container {
     overflow: hidden;
-    background-color: black;
+    /* background-color: black; */
+    background-image: url(./img/Lunar\ New\ Year\ 2023\ 10.png);
     text-align: center;
     position: relative; 
     width: 100%;
@@ -368,7 +370,7 @@
     
       <div class="container">
         <a href="#header">Home<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
-        <a href="#">About<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#home">About<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
         <a href="#">Projects and Achivements<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
         <a href="#tictac">Game<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
         <a href="#contact">Contact<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
@@ -404,11 +406,6 @@
     <h1>Tic Tac Toe</h1>
     <p id="turn-info"></p>
     <button onclick="startGame()">Start Game</button>
-    <div id="name-input">
-      <label for="playerName">Enter Your Name: </label>
-      <input type="text" id="playerName" />
-      <button onclick="startGameWithPlayerName()">Start Game with Name</button>
-    </div>
     <div class="board" id="board"></div>
     <script src="./index.js"></script>
   </div>
