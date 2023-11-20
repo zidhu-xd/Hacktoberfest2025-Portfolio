@@ -4,7 +4,10 @@ const board = document.getElementById("board");
               let playerSymbol = "X";
               let computerSymbol = "O";
               let gameActive = false;
-          
+              let playerName = ""; // Global variable to store the player's name
+
+   
+              
     function startGame() {
                 gameActive = true;
           
