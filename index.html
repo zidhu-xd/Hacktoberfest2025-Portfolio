@@ -4,368 +4,7 @@
   <title>Rajeev Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/RoHHRufzfT5zCFa/VcQFaBxFbF6d4Vm1tAR9" crossorigin="anonymous">
-
-  <style>
-    #home {
-    opacity: 0;
-    transform: translateX(-200px);
-    transition: opacity 2s, transform 2s;
-    text-align: center;
-  }
-  
-  #home.active {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  
-    button {
-      background-color: #4caf50;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-  
-    button:hover {
-      background-color: #45a049;
-    }
-        html {
-    scroll-behavior: smooth;
-  }
-      
-      body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        background-color: rgb(255, 255, 255);
-        /* background-image: url(./img/Lunar\ New\ Year\ 2023\ 10.png); */
-      }
-  /*  */
-  
-  .slider {
-    padding: 0px;
-    position: relative;
-    font-size: 1em;
-    margin: 0px;
-  }
-  
-  .slider .slides .item {
-    position: relative;
-    display: none;
-  }
-  
-  .slider .slides .item img {
-    width: 100%;
-    height: 800px;
-    object-fit: cover;
-  }
-  
-  .slider .slides .active {
-    display: block;
-  }
-  
-  .slider .buttons {
-    position: absolute;
-    bottom: 30px;
-    left: 40px;
-    z-index: 1;
-  }
-  
-  .slider .buttons i {
-    color: white;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-  
-  .slider .buttons i:hover {
-    color: rgba(173, 42, 42, 0.4);
-  }
-      
-  /*  */
-  
-  /* nav bar */
-
-/* .container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #f8f8f8; 
-  padding: 10px;
-} */
-
-/* Style for the navigation links */
-.container a {
-  text-decoration: none;
-  color: black;
-  font-size: 16px;
-  margin: 0 10px;
-}
-
-/* Media query for screens smaller than 600 pixels */
-@media only screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  /* Adjust the font size for smaller screens */
-  .container a {
-    font-size: 20px;
-    margin: 5px 0;
-  }
-}
-
-  
-  .container {
-    overflow: hidden;
-    /* background-color: black; */
-    background-image: url(./img/Lunar\ New\ Year\ 2023\ 10.png);
-    text-align: center;
-    position: relative; 
-    width: 100%;
-    z-index: 1000;
-    transition: position 0.3s; 
-  }
-  
-  .container a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .container a::before {
-    content: '';
-    width: 0%;
-    height: 3px;
-    display: block;
-    background-color: #fff;
-    margin-bottom: 1px;
-  }
-  
-  .container a:hover::before {
-    
-    width: 100%;
-    transition: all 0.5s;
-  }
-  
-  .fixed {
-    position: fixed; 
-    top: 0;
-  }
-  
-  /*  */
-  
-  
-      section {
-        padding: 0rem;
-      }
-  
-      footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 1rem;
-      }
-      #contactForm {
-        margin-top: 20px;
-      }
-  
-      #tictac {
-          
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* justify-content: center; */
-        /* height: 100vh; */
-      } 
-      .board {
-        display:grid;
-        grid-template-columns: repeat(3, 100px);
-        grid-gap: 4px;
-        padding: 4px;
-        
-        
-      }
-      .cell {
-        width: 100px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        border: 1px solid #000;
-        cursor: pointer;
-      }
-      
-  
-  
-      /* 0 */
-     
-  
-  
-  #home.active .image-container {
-    right: 0; 
-  }
-  
-  .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  
-  .content-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  .text-content {
-    text-align: center;
-    z-index: 1;
-    padding-right: 20px; 
-  }
-  table {
-        width: 100%;
-        table-layout: fixed; 
-      }
-      /*  */
-  
-  
-      @media only screen and (max-width: 768px) {
-        .container {
-          position: static;
-        }
-        .container a::before {
-          width: 0%;
-        }
-        .fixed {
-          position: static;
-        }
-        #home {
-          padding-top: 50px; 
-        }
-        .slider .buttons {
-          bottom: 10px;
-          left: 10px;
-        }
-        .text-content {
-          padding-right: 0;
-        }
-        .content-container {
-          flex-direction: column;
-        }
-        .image-container {
-          margin-top: 20px;
-        }
-        .slider .slides .item img {
-          height: auto;
-        }
-      }
-  
-      @media only screen and (max-width: 768px) {
-        .container {
-          position: static;
-        }
-        .container a::before {
-          width: 0%;
-        }
-        .fixed {
-          position: static;
-        }
-        #home {
-          padding-top: 50px; /* Adjust as needed */
-        }
-        .slider .buttons {
-          bottom: 10px;
-          left: 10px;
-        }
-        .text-content {
-          padding-right: 0;
-        }
-        .content-container {
-          flex-direction: column;
-        }
-        .image-container {
-          margin-top: 20px;
-        }
-        .slider .slides .item img {
-          height: auto;
-        }
-        .container {
-          text-align: left;
-        }
-  
-        #contactForm {
-          margin-top: 10px;
-        }
-        #contactForm label,
-        #contactForm textarea,
-        #contactForm button {
-          width: 100%;
-          box-sizing: border-box;
-        }
-  
-        footer {
-          text-align: center;
-        }
-      }
-      
-  
-      @media only screen and (max-width: 768px) {
-        .container {
-          position: static;
-        }
-        .container a::before {
-          width: 0%;
-        }
-        .fixed {
-          position: static;
-        }
-        #home {
-          padding-top: 50px; 
-        }
-        .slider .buttons {
-          bottom: 10px;
-          left: 10px;
-        }
-        .text-content {
-          padding-right: 0;
-        }
-        .content-container {
-          flex-direction: column;
-        }
-        .image-container {
-          margin-top: 20px;
-        }
-        .slider .slides .item img {
-          height: auto;
-        }
-  
-        .container {
-          text-align: left;
-        }
-        footer {
-          text-align: center;
-        }
-      }
-  </style>
+<link rel="stylesheet" href="./index.css">
 </head>
 <body>
     <header id="header">
@@ -410,7 +49,6 @@
       </div>
     
 
-
       <section id="home">
 
         <table >
@@ -437,6 +75,8 @@
             </table>
 </section>
 
+
+
 <section>
   <div class="tictac-content" id="tictac">
     <h1>Tic Tac Toe</h1>
@@ -452,18 +92,20 @@
 
 
 
-      <section id="contact" style="text-align: center;">
-        <h2>Contact Us</h2>
-        <div id="contactForm">
-          <label for="message">Your Message:</label> <br>
-          <textarea id="message" rows="4" cols="50"></textarea> <br>
-          <button onclick="sendMessage()">Send Message</button>
-        </div>
-      </section>
+     
 
     
       <footer>
+        <section id="contact" style="text-align: center;">
+          <h2>Contact Us</h2>
+          <div id="contactForm">
+            <label for="message">Your Message:</label> <br>
+            <textarea id="message" rows="4" cols="50"></textarea> <br>
+            <button onclick="sendMessage()">Send Message</button>
+          </div>
+        </section>
         <p>&copy; Rajeev Kumar Behera</p>
+        
       </footer>
     
 </body>
