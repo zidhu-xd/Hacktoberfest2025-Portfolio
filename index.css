@@ -160,7 +160,7 @@
         background-color: #333;
         color: #fff;
         text-align: center;
-        padding: 1rem;
+        padding: 1px;
       }
       #contactForm {
         margin-top: 20px;
@@ -232,6 +232,8 @@
         .container {
           white-space: nowrap;
           overflow-x: auto;
+          background-image: url(./img/Lunar\ New\ Year\ 2023\ 10\ \(3\).png);
+
         }
         .container .nav-item {
           display: inline-block; 
