@@ -280,6 +280,15 @@
           width: 100%;
           box-sizing: border-box;
         }
+        .fa {
+          padding: 20px;
+          font-size: 30px;
+          width: 10px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+          border-radius: 50%;
+        }
         .text-overlay {
           /* position: absolute;
           top: 50%;
