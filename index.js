@@ -12,9 +12,9 @@ const board = document.getElementById("board");
                 gameActive = true;
           
                 if (Math.random() < 0.5) {
-                  currentPlayer = "Player's";
+                  currentPlayer = "Your";
                 } else {
-                  currentPlayer = "Computer's";
+                  currentPlayer = "Raj's";
                   setTimeout(computerMove, 500);
                 }
           
@@ -30,16 +30,16 @@ const board = document.getElementById("board");
                 board.appendChild(cell);
           
                 cell.addEventListener("click", () => {
-                  if (cell.textContent === "" && currentPlayer === "Player's" && gameActive) {
+                  if (cell.textContent === "" && currentPlayer === "Your" && gameActive) {
                     cell.textContent = playerSymbol;
                     if (checkWinner(playerSymbol)) {
-                      alert("Player wins!");
+                      alert("Your");
                       resetBoard();
                     } else if (cells.every((cell) => cell.textContent !== "")) {
                       alert("It's a draw!");
                       resetBoard();
                     } else {
-                      currentPlayer = "Computer's";
+                      currentPlayer = "Raj's";
                       document.getElementById("turn-info").textContent = `${currentPlayer} turn`;
                       setTimeout(computerMove, 500);
                     }
@@ -73,21 +73,21 @@ const board = document.getElementById("board");
                   cells[bestMove].textContent = computerSymbol;
           
                   if (checkWinner(computerSymbol)) {
-                    alert("Computer wins!");
+                    alert("Raj Won");
                     resetBoard();
                   } else if (cells.every((cell) => cell.textContent !== "")) {
                     alert("It's a draw!");
                     resetBoard();
                   }
                 }
-                currentPlayer = "Player's";
+                currentPlayer = "Your";
                 document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
               }
           
     function resetBoard() {
                 gameActive = false;
                 cells.forEach((cell) => (cell.textContent = ""));
-                currentPlayer = "Player's";
+                currentPlayer = "Your";
                 document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
               }
           
