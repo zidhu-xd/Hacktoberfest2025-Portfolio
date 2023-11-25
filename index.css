@@ -229,6 +229,9 @@
   
   
       @media only screen and (max-width: 768px) {
+        footer {
+          padding: 50px; 
+        }
         .container {
           white-space: nowrap;
           overflow-x: auto;
