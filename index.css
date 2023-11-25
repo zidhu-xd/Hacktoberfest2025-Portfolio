@@ -96,8 +96,6 @@
   background-color: #f8f8f8; 
   padding: 10px;
 } */
-
-/* Style for the navigation links */
 .container a {
   text-decoration: none;
   color: black;
@@ -105,19 +103,7 @@
   margin: 0 10px;
 }
 
-/* Media query for screens smaller than 600 pixels */
-@media only screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  /* Adjust the font size for smaller screens */
-  .container a {
-    font-size: 20px;
-    margin: 5px 0;
-  }
-}
 
   
   .container {
@@ -214,24 +200,23 @@
     right: 0; 
   }
   
-  .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  
   .content-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: relative;
+    padding: 20px;
   }
   
   .text-content {
-    text-align: center;
-    z-index: 1;
-    padding-right: 20px; 
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: 200px;
   }
   table {
         width: 100%;
@@ -242,7 +227,12 @@
   
       @media only screen and (max-width: 768px) {
         .container {
-          position: static;
+          white-space: nowrap;
+          overflow-x: auto;
+        }
+        .container .nav-item {
+          display: inline-block; 
+          margin-right: 10px; 
         }
         .container a::before {
           width: 0%;

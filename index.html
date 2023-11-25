@@ -8,7 +8,17 @@
 </head>
 <body>
     <header id="header">
+      <div class="container">
+        <a href="#header">Home<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#home">About<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#">Projects<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#">Achivements<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#tictac">Game<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        <a href="#contact">Contact<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
+        
+      </div>
         <section class="slider">
+          
           <div class="slides">
             <div class="item active" id="slide1">
               <img src="./img/memount.jpg" alt="slide1" />
@@ -39,62 +49,30 @@
           </div>
         </section>
       </header>
-    
-      <div class="container">
-        <a href="#header">Home<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
-        <a href="#home">About<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
-        <a href="#">Projects and Achivements<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
-        <a href="#tictac">Game<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
-        <a href="#contact">Contact<b style="color: rgb(18, 18, 130); font-size: 28px;">;</b></a>
-      </div>
-    
-
       <section id="home">
-
-        <table >
-          <th></th>
-         
-          <th>
-            <div class="content-container">
-              <div class="text-content">
-                <h2>I'am Raj/></h2>
-                <p>Hey there! Android studio is using me!</p>
-                <p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;">I specialize in Android app development, Bluetooth Low Energy (BLE), image processing, 
-                  and web development. My interests lie in creating innovative Android applications, exploring IoT 
-                  applications of BLE, working with image processing algorithms, and delving into web technologies.</p>
-              </div>
-          </th>
-
-          <th>
-              <div class="image-container" id="rightSlideImage">
-                <img src="./img/photo_2022-06-26_00-55-57.jpg" alt="Your Image">
-              </div>
-          </th>
-
-            <th></th>
-            </table>
-</section>
-
-
-
-<section>
-  <div class="tictac-content" id="tictac">
-    <h1>Tic Tac Toe</h1>
-    <p id="turn-info"></p>
-    <button onclick="startGame()">Start Game</button>
-    <div class="board" id="board"></div>
-    <script src="./index.js"></script>
-  </div>
-</section>
-
+        <div class="content-container">
+          <div class="text-content">
+            <h2>I am Raj</h2>
+            <p>Hey there! Android Studio is using me!</p>
+            <p>I specialize in Android app development, Bluetooth Low Energy (BLE), image processing, 
+              and web development. My interests lie in creating innovative Android applications, exploring IoT 
+              applications of BLE, working with image processing algorithms, and delving into web technologies.</p>
+          </div>
       
-      
-
-
-
-     
-
-    
+          <div class="image-container" id="rightSlideImage">
+            <img src="./img/photo_2022-06-26_00-55-57.jpg" alt="Your Image">
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="tictac-content" id="tictac">
+          <h1>Tic Tac Toe</h1>
+          <p id="turn-info"></p>
+          <button onclick="startGame()">Start Game</button>
+          <div class="board" id="board"></div>
+          <script src="./index.js"></script>
+        </div>
+      </section>
       <footer>
         <section id="contact" style="text-align: center;">
           <h2>Contact Us</h2>

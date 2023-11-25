@@ -4,14 +4,13 @@ const board = document.getElementById("board");
               let playerSymbol = "X";
               let computerSymbol = "O";
               let gameActive = false;
-              let playerName = ""; // Global variable to store the player's name
+              let playerName = ""; 
 
    
               
     function startGame() {
                 gameActive = true;
           
-                // Randomly decide who starts
                 if (Math.random() < 0.5) {
                   currentPlayer = "Player's";
                 } else {
