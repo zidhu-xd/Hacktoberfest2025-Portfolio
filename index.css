@@ -280,8 +280,32 @@
           width: 100%;
           box-sizing: border-box;
         }
-  
+        .text-overlay {
+          /* position: absolute;
+          top: 50%;
+          left: 70%;
+          transform: translate(-50%, -50%);
+          color: white;
+          font-size: 24px;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          border-right: 2px solid white; 
+          animation: typewriter 1s steps(40) infinite; */
+    
+    
+          position: absolute;
+          top: 30%;
+          left: 70%;
+          transform: translate(-50%, -50%);
+          color: white; 
+          font-size: 10px; 
+          text-align: left; 
+          font-family: 'Courier New', Courier, monospace;
+        }
       }
+
+
       .text-overlay {
         /* position: absolute;
         top: 50%;
