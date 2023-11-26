@@ -1,23 +1,5 @@
-#home {
-    opacity: 0;
-    transform: translateX(-200px);
-    transition: opacity 2s, transform 2s;
-    text-align: center;
-  }
+
   
-  #home.active {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
   
     button {
       background-color: #4caf50;
@@ -220,12 +202,24 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
   
-  .image-container img {
+  .image-container img,svg {
     max-width: 100%;
     height: 200px;
   }
 
+  #home {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 2s, transform 2s;
+    text-align: center;
+  }
+  
+  #home.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
       /*  */
+      
   
   
       @media only screen and (max-width: 768px) {

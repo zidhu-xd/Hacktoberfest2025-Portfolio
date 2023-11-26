@@ -279,9 +279,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   
-    // Check on page load
     checkScroll();
   
-    // Check on scroll
     window.addEventListener("scroll", checkScroll);
   });
+  
