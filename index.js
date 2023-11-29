@@ -283,4 +283,71 @@ document.addEventListener("DOMContentLoaded", function () {
   
     window.addEventListener("scroll", checkScroll);
   });
-  
+  document.addEventListener('DOMContentLoaded', function () {
+    // Select the target node
+    const target = document.querySelector('#projects');
+
+    // Set up the Intersection Observer options
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5, // Adjust the threshold as needed
+    };
+
+    // Callback function to handle the intersection changes
+    const callback = function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          // If the section is in view, add the "animate" class to each project
+          document.querySelectorAll('.project').forEach(function (project, index) {
+            project.classList.add('animate');
+          });
+
+          // Disconnect the observer once animation is triggered
+          observer.disconnect();
+        }
+      });
+    };
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(callback, options);
+
+    // Start observing the target node
+    observer.observe(target);
+  });
+
+
+
+
+
+
+  // 
+  const cursor = document.querySelector(".cursor");
+const links = document.querySelectorAll("nav ul li a");
+const navlinks = document.querySelectorAll("nav ul li");
+
+document.addEventListener("mousemove", (e) => {
+    let leftPosition = e.pageX + 4;
+    let topPosition = e.pageY + 4;
+
+    cursor.style.left = leftPosition + "px";
+    cursor.style.top = topPosition + "px";
+})
+
+links.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+        cursor.classList.add("large");
+    })
+})
+
+links.forEach(link => {
+    link.addEventListener("mouseleave", () => {
+        cursor.classList.remove("large");
+    })
+})
+
+// Animation
+
+navlinks.forEach((li, i) => {
+    li.style.animationDelay = 0 + i * 140 + "ms";
+})
