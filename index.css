@@ -144,7 +144,7 @@
         text-align: center;
         padding: 1px;
       }
-      #contactForm {
+      #contactForm1 {
         margin-top: 20px;
       }
   
@@ -433,12 +433,12 @@
           text-align: left;
         }
   
-        #contactForm {
+        #contactForm1 {
           margin-top: 10px;
         }
-        #contactForm label,
-        #contactForm textarea,
-        #contactForm button {
+        #contactForm1 label,
+        #contactForm1 textarea,
+        #contactForm1 button {
           width: 100%;
           box-sizing: border-box;
         }

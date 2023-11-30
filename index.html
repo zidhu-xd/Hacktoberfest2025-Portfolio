@@ -89,11 +89,11 @@
           </div>
       
           <div class="project2">
-              <a href="https://github.com/yesiamrajeev/Graph-App" target="_blank">
-                  <img src="./imgproject/scanner2.png" width="15%" height="15%" class="proimg" alt="Project Image">
+              <a href="https://github.com/yesiamrajeev/FaceDetection_Prototype3" target="_blank">
+                  <img src="./imgproject/facepro.png" width="15%" height="15%" class="proimg" alt="Project Image">
               </a>
               <div class="project-text2">
-                  <p>Graph App</p>
+                  <p>Face Recognition</p>
               </div>
           </div>
       
@@ -120,20 +120,20 @@
       <section class="project">
         <div class="project-container">
         <div class="project3">
-              <a href="https://github.com/example/project2" target="_blank">
-                  <img src="./imgproject/scanner2.png" width="15%" height="15%" class="proimg" alt="Project Image">
+              <a href="https://github.com/hacktoberfest-codex/YATRA360" target="_blank">
+                  <img src="./imgproject/yatra360.png" width="15%" height="15%" class="proimg" alt="Project Image">
               </a>
               <div class="project-text3">
-                  <p>Project3</p>
+                  <p>Yatra 360</p>
               </div>
           </div>
       
           <div class="project4">
-              <a href="https://github.com/example/project3" target="_blank">
-                  <img src="./imgproject/scanner2.png" width="15%" height="15%" class="proimg" alt="Project Image">
+              <a href="https://github.com/yesiamrajeev/sentinex-prototype5" target="_blank">
+                  <img src="./imgproject/sentinexpro.png" width="15%" height="15%" class="proimg" alt="Project Image">
               </a>
               <div class="project-text4">
-                  <p>Project4</p>
+                  <p>Sentinex</p>
               </div>
           </div>
         </div>
@@ -153,14 +153,87 @@
           <a href="https://www.linkedin.com/in/rajeev-kumar-behera-36403428b/" class="fa fa-linkedin"></a>
           <a href="https://github.com/yesiamrajeev" class="fa fa-github"></a>
           <a href="mailto:rajeev.220077@gmail.com" class="fa fa-google"></a>
-          <a href="#" class="fa fa-instagram"></a>
+          <a href="https://www.instagram.com/yes._.i._.am/" class="fa fa-instagram"></a>
 
 
-          <div id="contactForm">
-            <label for="message">Your Message:</label> <br>
-            <textarea id="message" rows="4" cols="50"></textarea> <br>
-            <button onclick="sendMessage()">Send Message</button>
-          </div>
+                <div id="contactForm1">
+                  <form action="" id="contactForm">
+                    <div class="alert" style="display:none;">Your message sent</div>
+                    <div class="success-alert" style="display:none;">Message sent successfully!</div>
+
+                    <div class="inputBox">
+                      <input type="text" id="name" placeholder="Your name" />
+                    </div>
+
+                    <div class="inputBox">
+                      <input type="email" id="emailid" placeholder="Your Email" />
+                    </div>
+
+                    <div class="inputBox">
+                      <textarea id="msgContent" cols="40" rows="5" placeholder="Message"></textarea>
+                    </div>
+
+                    <div class="inputBox">
+                      <button type="submit">Submit</button>
+                    </div>
+                  </form>
+                </div>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+          <script defer>
+            const firebaseConfig = {
+                    apiKey: "AIzaSyASYIx-1VTxdKXHYBnZA2LLLQFgnrYUya0",
+                    authDomain: "portfolio-2a7b9.firebaseapp.com",
+                    databaseURL: "https://portfolio-2a7b9-default-rtdb.firebaseio.com",
+                    projectId: "portfolio-2a7b9",
+                    storageBucket: "portfolio-2a7b9.appspot.com",
+                    messagingSenderId: "598365410181",
+                    appId: "1:598365410181:web:972b00285c63054b53aaec",
+                    measurementId: "G-L9JJF5KW1C"
+            };
+
+                  if (!firebase.apps.length) {
+                    firebase.initializeApp(firebaseConfig);
+                  }
+
+                  var contactFormDB = firebase.database().ref("contactForm");
+
+                  document.addEventListener("DOMContentLoaded", function () {
+                    document.getElementById("contactForm").addEventListener("submit", submitForm);
+                  });
+
+                  function submitForm(e) {
+                    e.preventDefault();
+
+                    var name = getElementVal("name");
+                    var emailid = getElementVal("emailid");
+                    var msgContent = getElementVal("msgContent");
+
+                    saveMessages(name, emailid, msgContent);
+
+                    document.querySelector(".alert").style.display = "block";
+
+                    setTimeout(() => {
+                      document.querySelector(".alert").style.display = "none";
+                    }, 3000);
+
+                    document.getElementById("contactForm").reset();
+                  }
+
+                  const saveMessages = (name, emailid, msgContent) => {
+                    var newContactForm = contactFormDB.push();
+
+                    newContactForm.set({
+                      name: name,
+                      emailid: emailid,
+                      msgContent: msgContent,
+                    });
+                  };
+
+                  const getElementVal = (id) => {
+                    return document.getElementById(id).value;
+                  };
+        </script>
         </section>
         <p>&copy; Rajeev Kumar Behera</p>
         
