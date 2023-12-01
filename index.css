@@ -1,5 +1,7 @@
+#home{
+  padding: 10px;
+}
 
-  
   
     button {
       background-color: #4caf50;
@@ -100,6 +102,8 @@
     width: 100%;
     z-index: 1000;
     transition: position 0.3s; 
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .container a {
@@ -186,13 +190,22 @@
   #home.active .image-container {
     right: 0; 
   }
-  
+  .achivements-container {
+    width: 90%;
+    display: absolute;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: right;
+    padding: 200px;
+    /* margin-top: 100px; */
+  }
   .content-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-top: 100px;
   }
   
   .text-content {
@@ -238,6 +251,9 @@
       width: 40%;
       text-align: center;
       margin: auto;
+    }
+    .a1, .a2, .a3, .a4{
+      display: flex; text-align: center; width: 90%;
 
     }
     .proimg {
@@ -250,6 +266,17 @@
         padding: 10px;
         border-radius: 30px 30px 0px 0px;
     }
+    .proimg2 {
+      width: 70%; 
+      margin-top: 100px;
+      max-width: 100%; 
+      height: 70%; 
+      position: relative;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      transition: box-shadow 0.3s ease;
+      /* padding: 10px; */
+      border-radius: 30px 30px 0px 0px;
+  }
     
     .project1:hover .proimg{
         box-shadow: 0 0 30px rgba(243, 240, 240, 0.7);
@@ -307,6 +334,21 @@
   text-align: center;
   width: 19.8%;
   padding: 10px;
+  color: whitesmoke;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0); 
+  border-radius: 0 0 30px 30px; 
+  backdrop-filter: blur(10px); 
+  /* border: 1px solid black; */
+}
+
+.img1{
+  width: 50%;
+  padding: 100px;
+}
+.a-text1, .a-text2, .a-text3, .a-text4 {
+  padding: 0%; width: 50%; text-align: right; padding-right: 50px;
+  /* padding: 100px; */
   color: whitesmoke;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0); 
