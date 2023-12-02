@@ -501,6 +501,7 @@
         }
         .content-container {
           flex-direction: column;
+         padding-top: 50px;
         }
         .image-container {
           margin-top: 20px;
