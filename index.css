@@ -1,6 +1,11 @@
 #home{
   padding: 10px;
 }
+
+html {
+  cursor: url('https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/red2.png?alt=media&token=36f63aa9-bc3f-430d-b9f5-7b757571b8eb'), auto;
+}
+
 #rightSlideImage {
   position: relative;
   overflow: hidden;
