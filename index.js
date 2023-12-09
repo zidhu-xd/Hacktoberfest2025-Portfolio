@@ -351,7 +351,19 @@ links.forEach(link => {
 navlinks.forEach((li, i) => {
     li.style.animationDelay = 0 + i * 140 + "ms";
 })
+const elements = document.querySelectorAll('.a1, .a2, .a3, .a4');
 
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        elements.forEach(element => {
+            observer.observe(element);
+        });
 
 
 
