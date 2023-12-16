@@ -317,7 +317,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-
+  window.addEventListener('load', function() {
+    // After the page has fully loaded, show the content
+    document.body.style.display = 'block';
+});
 
 
 
