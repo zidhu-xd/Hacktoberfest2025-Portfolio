@@ -369,57 +369,39 @@ const elements = document.querySelectorAll('.a1, .a2, .a3, .a4');
 
 
 
-
-// backend starts here 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyASYIx-1VTxdKXHYBnZA2LLLQFgnrYUya0",
-//   authDomain: "portfolio-2a7b9.firebaseapp.com",
-//   databaseURL: "https://portfolio-2a7b9-default-rtdb.firebaseio.com",
-//   projectId: "portfolio-2a7b9",
-//   storageBucket: "portfolio-2a7b9.appspot.com",
-//   messagingSenderId: "598365410181",
-//   appId: "1:598365410181:web:972b00285c63054b53aaec",
-//   measurementId: "G-L9JJF5KW1C"
-// };
-
-// if (!firebase.apps.length) {
-//   firebase.initializeApp(firebaseConfig);
-// }
-
-// var contactFormDB = firebase.database().ref("contactForm");
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.getElementById("contactForm").addEventListener("submit", submitForm);
-// });
-
-// function submitForm(e) {
-//   e.preventDefault();
-
-//   var name = getElementVal("name");
-//   var emailid = getElementVal("emailid");
-//   var msgContent = getElementVal("msgContent");
-
-//   saveMessages(name, emailid, msgContent);
-
-//   document.querySelector(".alert").style.display = "block";
-
-//   setTimeout(() => {
-//     document.querySelector(".alert").style.display = "none";
-//   }, 3000);
-
-//   document.getElementById("contactForm").reset();
-// }
-
-// const saveMessages = (name, emailid, msgContent) => {
-//   var newContactForm = contactFormDB.push();
-
-//   newContactForm.set({
-//     name: name,
-//     emailid: emailid,
-//     msgContent: msgContent,
-//   });
-// };
-
-// const getElementVal = (id) => {
-//   return document.getElementById(id).value;
-// };
+        (function() {
+          var follower, init, mouseX, mouseY, positionElement, printout, timer;
+        
+          follower = document.getElementById('follower');
+        
+          printout = document.getElementById('printout');
+        
+          mouseX = (event) => {
+            return event.clientX;
+          };
+        
+          mouseY = (event) => {
+            return event.clientY;
+          };
+        
+          positionElement = (event) => {
+            var mouse;
+            mouse = {
+              x: mouseX(event),
+              y: mouseY(event)
+            };
+            follower.style.top = mouse.y + 'px';
+            return follower.style.left = mouse.x + 'px';
+          };
+        
+          timer = false;
+        
+          window.onmousemove = init = (event) => {
+            var _event;
+            _event = event;
+            return timer = setTimeout(() => {
+              return positionElement(_event);
+            }, 1);
+          };
+        
+        }).call(this);
