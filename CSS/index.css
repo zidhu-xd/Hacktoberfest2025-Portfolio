@@ -79,7 +79,7 @@
       }
       ::-webkit-scrollbar-track {
         /* background-color: #e73030;  */
-        background-image: url(./img/Lunar\ New\ Year\ 2023\ 10\ \(3\).png);
+        background-image: url(../img/Lunar\ New\ Year\ 2023\ 10\ \(3\).png);
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -152,7 +152,7 @@
   .container {
     overflow: hidden;
     /* background-color: black; */
-    background-image: url(./svgs/background.svg);
+    background-image: url(../svgs/background.svg);
     text-align: center;
     position: relative; 
     width: 100%;
@@ -491,11 +491,11 @@
     
   
     .project.animate:nth-child(odd) {
-      animation: slideInLeft 1s ease-in-out;
+      animation: slideInLeft 2s ease-in-out;
     }
   
     .project.animate:nth-child(even) {
-      animation: slideInRight 1s ease-in-out;
+      animation: slideInRight 2s ease-in-out;
     }
 
 

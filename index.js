@@ -250,39 +250,24 @@ const board = document.getElementById("board");
 
                 
 
-   // Add this script to your existing JavaScript file or in a separate file
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     var homeSection = document.getElementById("home");
-//     var homeOffset = homeSection.offsetTop - window.innerHeight + 100;
-  
-//     function checkScroll() {
-//       if (window.scrollY > homeOffset && !homeSection.classList.contains("active")) {
-//         homeSection.classList.add("active");
-//       }
-//     }
-  
-//     // Check on page load
-//     checkScroll();
-  
-//     // Check on scroll
-//     window.addEventListener("scroll", checkScroll);
-//   });
-//   // Add this script to your existing JavaScript file or in a separate file
+
 
 document.addEventListener("DOMContentLoaded", function () {
     var homeSection = document.getElementById("home");
+
+    var observer = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting && !homeSection.classList.contains("active")) {
+            homeSection.classList.add("active");
+        }
+    }, { threshold: 0 });
+
+    observer.observe(homeSection);
+});
+
+
+
   
-    function checkScroll() {
-      if (window.scrollY > homeSection.offsetTop - window.innerHeight + 100 && !homeSection.classList.contains("active")) {
-        homeSection.classList.add("active");
-      }
-    }
-  
-    checkScroll();
-  
-    window.addEventListener("scroll", checkScroll);
-  });
   document.addEventListener('DOMContentLoaded', function () {
     // Select the target node
     const target = document.querySelector('#projects');
