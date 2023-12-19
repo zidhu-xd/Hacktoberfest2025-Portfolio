@@ -251,8 +251,6 @@ const board = document.getElementById("board");
                 
 
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     var homeSection = document.getElementById("home");
 
