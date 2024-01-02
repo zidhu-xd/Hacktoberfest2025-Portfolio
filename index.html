@@ -275,15 +275,21 @@
                     var emailid = getElementVal("emailid");
                     var msgContent = getElementVal("msgContent");
 
-                    saveMessages(name, emailid, msgContent);
+                    if (name && emailid && msgContent) {
+            // Only save messages if all fields are filled
+            saveMessages(name, emailid, msgContent);
 
-                    document.querySelector(".alert").style.display = "block";
+            document.querySelector(".alert").style.display = "block";
 
-                    setTimeout(() => {
-                      document.querySelector(".alert").style.display = "none";
-                    }, 3000);
+            setTimeout(() => {
+                document.querySelector(".alert").style.display = "none";
+            }, 3000);
 
-                    document.getElementById("contactForm").reset();
+            document.getElementById("contactForm").reset();
+        } else {
+            // Display an error message if any field is empty
+            alert("Please fill in all fields.");
+        }
                   }
 
                   const saveMessages = (name, emailid, msgContent) => {
