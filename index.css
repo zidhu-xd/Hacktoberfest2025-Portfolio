@@ -454,9 +454,65 @@
     text-align: center;
     width: 100%;
     padding-bottom: 15px;
+    }
+
+
+
+
+
+
+
+
+    #skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 40px;
+      justify-content: center;
+      padding: 200px;
+    }
+    
+    .card {
+      width: 100px; /* Adjust width to make the card square */
+      height: 100px; /* Set height equal to width */
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.087);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .logo {
+      width: 100%; /* Set logo width to 100% of its container */
+      height: 100%; /* Set logo height to 100% of its container */
+      margin: 0 auto 10px;
+      display: block;
+    }
+    
+    h3 {
+      margin: 0;
+      font-size: 14px;
+      color: #fff;
+    }
+    
     
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .proimg {
         width: 100%; 
         max-width: 100%; 
@@ -693,7 +749,11 @@
   }
     
   
-      @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
+    #skills {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
+    }
+  
 
         ::-webkit-scrollbar {
           width: 0px; 
