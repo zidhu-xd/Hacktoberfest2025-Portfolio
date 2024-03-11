@@ -408,3 +408,34 @@ const elements = document.querySelectorAll('.a1, .a2, .a3, .a4');
     if (loadingBar) {
         loadingBar.remove();
     }
+
+
+
+
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+  
+    // Function to add animation class when section is in viewport
+    function animateOnScroll() {
+      const sections = document.querySelectorAll('.animate-on-scroll');
+      sections.forEach((section) => {
+        if (isInViewport(section)) {
+          section.classList.add('animate');
+        } else {
+          section.classList.remove('animate');
+        }
+      });
+    }
+  
+    // Initial check when page loads
+    window.addEventListener('load', animateOnScroll);
+    // Check when scrolling
+    window.addEventListener('scroll', animateOnScroll);
+  

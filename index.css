@@ -1,9 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
 
-#home{
+/* #home{
   padding: 10px;
-}
+} */
 #rightSlideImage {
   position: relative;
   overflow: hidden;
@@ -83,10 +83,11 @@
         border-radius: 6px; 
       }
       ::-webkit-scrollbar-track {
-        /* background-color: #e73030;  */
-        background-image: url(./img/Lunar\ New\ Year\ 2023\ 10\ \(3\).png);
-        background-repeat: no-repeat;
-        background-size: cover;
+        /* background-image: url(./img/Lunar\ New\ Year\ 2023\ 10\ \(3\).png); */
+        /* background-repeat: no-repeat;
+        background-size: cover; */
+        background-color:  #5c0a0a; 
+
 
       }
   /*  */
@@ -155,21 +156,19 @@
 
 
   
-  .container {
-    overflow: hidden;
-    /* background-color: black; */
-    background-image: url(./svgs/background.svg);
-    text-align: center;
-    position: relative; 
-    width: 100%;
-    z-index: 1000;
-    -webkit-transition: position 0.3s;
-    -o-transition: position 0.3s;
-    transition: position 0.3s; 
-    background-repeat: no-repeat;
-    background-size: cover;
+.container {
+  /* background-color: rgba(0, 0, 0, 0);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/background.svg?alt=media&token=20669e88-d534-4c9f-881c-53bb7128a313); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(15px); 
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
 
-  }
   
   .container a {
     display: inline-block;
@@ -458,11 +457,6 @@
 
 
 
-
-
-
-
-
     #skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -497,20 +491,6 @@
     }
     
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     .proimg {
@@ -748,10 +728,28 @@
               transform: translateX(0);
   }
     
-  
+
+.animate-on-scroll {
+  opacity: 0; 
+}
+
+@keyframes fade-in-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-on-scroll.animate {
+  animation: fade-in-from-left 1s ease-in-out forwards; 
+}
   @media only screen and (max-width: 768px) {
     #skills {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
+      grid-template-columns: repeat(2, 1fr); 
     }
   
 
@@ -813,7 +811,7 @@
           /* margin-top: 100px; */
         }
         .a-text1, .a-text3 {
-          width: 50%; 
+          width: 60%; 
           text-align: center; 
           height: 200px;
           /* padding: 50px; */
@@ -830,7 +828,7 @@
 
         }
         .a-text2, .a-text4{
-          width: 50%; 
+          width: 60%; 
           text-align: center; 
           height: 200px;
           padding-top: 0%;
@@ -854,7 +852,7 @@
         }
         
         .proimg2 {
-              width: 79%; 
+              width:80%; 
               text-align: right; 
               height: 100%; 
               border-radius: 0px 0px 30px 30px; 
