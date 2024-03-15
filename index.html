@@ -12,9 +12,44 @@
     cursor:row-resize;
   }
 
+  #btn {
+  position: relative; 
+  background-color: rgba(210, 55, 55, 0.7); 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(15px); 
+  transition: all 0.3s ease; 
+}
+
+#btn::before {
+  content: '';
+  position: absolute; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: inherit;
+  filter: blur(10px); 
+  z-index: -1; 
+}
+
+#btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+#btn:hover::before {
+  background-color: rgba(0, 86, 179, 0.7); 
+}
+
+
 
 </style>
-<body style="background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/Lunar%20New%20Year%202023%2010.png?alt=media&token=b8c90d62-3deb-4e06-965c-d807a617197d);">
+<body style="">
 
     <header id="header">
       <div class="container">
@@ -76,7 +111,10 @@
               delving into IoT applications in BLE, and harnessing the power of image processing algorithms. 
               My skills have been highlighted with remarkable achievements, including winning the Symposium 2023 at ITER 
               and winning the GeeksforGeeks hackathon held at IIIT BBSR.</p>
-
+              <a href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/Rajeev-kumar-Behera-FlowCV-Resume-20240312.pdf?alt=media&token=9b6e07b0-b9d4-4a17-9e76-9a3f1cf5b007" download="Rajeev_Resume.pdf">
+                <button id="btn">Download Resume</button>
+              </a>
+              
           </div>
           <div class="image-container" id="rightSlideImage">
             <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/profile.png?alt=media&token=c0d8808f-3fbb-4010-80e8-2570579a48df"  alt="Your Image">
@@ -155,6 +193,7 @@
                           honors in a stiff competition. <br> <br> The 6-hour event demonstrated our commitment, culminating in an impressive performance that 
                           earned us appreciation from the esteemed faculty, Additional Dean of ITER We are delighted to be recognized for our hard work 
                           and honored to have stood tall in the top 3 teams in our division!</p>
+                          
                     </div>
                     <!-- <div class="img1"> -->
                       <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium1.png?alt=media&token=e22aaa8c-aa1b-42a3-9d29-a7963ab20de9"  style="object-fit: cover;" class="proimg2" alt="Project Image">
