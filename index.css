@@ -749,29 +749,72 @@
 .animate-on-scroll.animate {
   animation: fade-in-from-left 1s ease-in-out forwards; 
 }
+
+
+
+.achievement-card {
+  display: flex;
+  flex-direction: row;
+  max-width: 90%;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.achievement-card .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  width: 50%;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevents text from overflowing */
+}
+
+.achievement-card .text h2 {
+  margin: 0;
+  font-size: 24px; /* Adjusted font size for smaller screens */
+  font-weight: bold;
+  color: #f8f8f8;
+}
+
+.achievement-card .text p {
+  margin: 10px 0 0;
+  font-size: 18px; /* Adjusted font size for smaller screens */
+  color: #ffffff;
+}
   @media only screen and (max-width: 768px) {
     #skills {
       grid-template-columns: repeat(2, 1fr); 
     }
     .achievement-card {
-      flex-direction: column;
-      max-width: 80%;
+      flex-direction: column-reverse;
   }
+
   .achievement-card img {
       width: 100%;
-      border-radius: 15px 15px 0 0;
   }
+
   .achievement-card .text {
       width: 100%;
-      padding: 20px 10px;
+      padding: 15px; /* Adjusted padding for smaller screens */
       text-align: center;
       border-radius: 0 0 15px 15px;
   }
+
   .achievement-card .text h2 {
-      font-size: 18px;
+      font-size: 20px; /* Further adjusted font size for smaller screens */
   }
+
   .achievement-card .text p {
-      font-size: 15px;
+      font-size: 16px; /* Further adjusted font size for smaller screens */
   }
         ::-webkit-scrollbar {
           width: 0px; 
