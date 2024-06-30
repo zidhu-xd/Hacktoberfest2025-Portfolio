@@ -172,47 +172,49 @@ const board = document.getElementById("board");
           
                 return null;
               }
-    function slider(input) {
-                        // const item = document.querySelector(`#${input}`);
-                        // const slideArr = document.querySelectorAll(".slides");
-                        // const slideArr = [...document.querySelector(".slides").children];
 
-                        // slideArr.forEach((element) => element.classList.remove("active"));
-                        // item.classList.add("active");
+
+    // function slider(input) {
+    //                     // const item = document.querySelector(`#${input}`);
+    //                     // const slideArr = document.querySelectorAll(".slides");
+    //                     // const slideArr = [...document.querySelector(".slides").children];
+
+    //                     // slideArr.forEach((element) => element.classList.remove("active"));
+    //                     // item.classList.add("active");
 
                         
-                        const item = document.querySelector(`#${input}`);
-                        const slideArr = document.querySelectorAll(".slides");
+    //                     const item = document.querySelector(`#${input}`);
+    //                     const slideArr = document.querySelectorAll(".slides");
                         
-                        if (item && slideArr) {
-                            slideArr.forEach((element) => element.classList.remove("active"));
-                            item.classList.add("active");
-                        } else {
-                            console.error("Slider elements not found");
-                        }
+    //                     if (item && slideArr) {
+    //                         slideArr.forEach((element) => element.classList.remove("active"));
+    //                         item.classList.add("active");
+    //                     } else {
+    //                         console.error("Slider elements not found");
+    //                     }
                       
                       
-                      }
+    //                   }
 
-                      let slideIndex = 1;
-                      setInterval(() => {
-                        slideIndex++;
-                        if (slideIndex === 7) 
-                        slideIndex = 1;
-                        slider(`slide${slideIndex}`);
-                      }, 2000);
-                      document.addEventListener("DOMContentLoaded", function () {
-                            var container = document.querySelector(".container");
-                            var scrollThreshold = container.offsetTop;
+    //                   let slideIndex = 1;
+    //                   setInterval(() => {
+    //                     slideIndex++;
+    //                     if (slideIndex === 7) 
+    //                     slideIndex = 1;
+    //                     slider(`slide${slideIndex}`);
+    //                   }, 2000);
+    //                   document.addEventListener("DOMContentLoaded", function () {
+    //                         var container = document.querySelector(".container");
+    //                         var scrollThreshold = container.offsetTop;
 
-                            window.addEventListener("scroll", function () {
-                              if (window.pageYOffset > scrollThreshold) {
-                                container.classList.add("fixed");
-                              } else {
-                                container.classList.remove("fixed");
-                              }
-                            });
-                          });
+    //                         window.addEventListener("scroll", function () {
+    //                           if (window.pageYOffset > scrollThreshold) {
+    //                             container.classList.add("fixed");
+    //                           } else {
+    //                             container.classList.remove("fixed");
+    //                           }
+    //                         });
+    //                       });
                           
                           
     // document.addEventListener("DOMContentLoaded", function () {
@@ -344,6 +346,16 @@ links.forEach(link => {
 })
 
 // Animation
+window.addEventListener('scroll', function() {
+  var header = document.getElementById('header');
+  var scrollPosition = window.scrollY;
+
+  if (scrollPosition > 0) {
+      header.classList.add('fixed');
+  } else {
+      header.classList.remove('fixed');
+  }
+});
 
 navlinks.forEach((li, i) => {
     li.style.animationDelay = 0 + i * 140 + "ms";
