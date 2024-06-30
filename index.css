@@ -815,6 +815,9 @@
 
   .achievement-card .text p {
       font-size: 16px; /* Further adjusted font size for smaller screens */
+      padding-left: 20px;
+      padding-right: 20px;
+
   }
         ::-webkit-scrollbar {
           width: 0px; 
@@ -914,35 +917,6 @@
           width: 100%;
           text-align: center; 
         }
-        
-        .proimg2 {
-              width:80%; 
-              text-align: right; 
-              height: 100%; 
-              border-radius: 0px 0px 30px 30px; 
-              -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
-                      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-              -webkit-transition: -webkit-box-shadow 0.3s ease;
-              transition: -webkit-box-shadow 0.3s ease;
-              -o-transition: box-shadow 0.3s ease;
-              transition: box-shadow 0.3s ease;
-              transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
-          }
-          .proimg3 {
-            width: 79%; 
-            text-align: right; 
-            height: 100%; 
-            border-radius:30px 30px 0px 0px ; 
-            -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
-                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            -webkit-transition: -webkit-box-shadow 0.3s ease;
-            transition: -webkit-box-shadow 0.3s ease;
-            -o-transition: box-shadow 0.3s ease;
-            transition: box-shadow 0.3s ease;
-            transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
-        
-          }
-
 
 
 
@@ -973,14 +947,20 @@
           background-size: cover; 
           background-position: center center;
           height:350px;
+          margin-left: 10%;
         }
-        
+        .image-text{
+          margin-left: 10%;
+        }
         #rightSlideImage img {
           width: 100%; 
           height: auto; 
           display: block;
+          
         }
-
+        .image-container-wrapper{
+          align-items: center; 
+        }
 
         .project1, .project2, .project3, .project4{
           width: 100%;
@@ -1041,6 +1021,7 @@
         }
         #home {
           padding-top: 50px; 
+          align-items: center; 
         }
         .slider .buttons {
           bottom: 10px;
