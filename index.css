@@ -560,12 +560,14 @@
 }
 
 .sheading{
-  color: #6c1fe8; font-size: 55px; font-weight: bold; margin-bottom: 0px; margin-left: 5%; position: relative;
+  color: #d4d4d4; font-size: 55px; font-weight: bold; margin-bottom: 0px; margin-left: 5%; position: relative;
 }
 .Aheading{
-  color: #6c1fe8; font-size: 55px; font-weight: bold; margin-bottom: -12%; margin-top: 15%; margin-left: 5%; position: relative;
+  color: #d4d4d4; font-size: 55px; font-weight: bold; margin-bottom: -12%; margin-top: 15%; margin-left: 5%; position: relative;
 }
-
+.semicolon{
+  color: rgb(245, 122, 77); font-size: 55px;
+}
 
   
     .project:hover .project-text1 .project-text2 .project-text3 .project-text4{
@@ -969,11 +971,15 @@
           display: none;
         }
         .sheading{
-          color: #6c1fe8; font-size: 25px; font-weight: bold; margin-bottom: 25%; margin-left: 5%; position: relative;
+          color: #d4d4d4; font-size: 25px; font-weight: bold; margin-bottom: 25%; margin-left: 5%; position: relative;
         }
         .Aheading{
-          color: #6c1fe8; font-size: 25px; font-weight: bold; margin-bottom: 25%; margin-left: 5%; position: relative;
+          color: #d4d4d4; font-size: 25px; font-weight: bold; margin-bottom: 25%; margin-left: 5%; position: relative;
         }
+        .semicolon{
+          color: rgb(245, 122, 77); font-size: 25px;
+        }
+
         
 
         footer {

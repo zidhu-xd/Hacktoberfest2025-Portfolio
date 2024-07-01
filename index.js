@@ -345,6 +345,20 @@ links.forEach(link => {
     })
 })
 
+
+
+window.addEventListener('load', () => {
+  const loadingScreen = document.getElementById('loading-screen');
+  loadingScreen.style.display = 'none';
+
+  const homeSection = document.getElementById('home');
+  homeSection.classList.add('active');
+});
+
+
+
+
+
 // Animation
 window.addEventListener('scroll', function() {
   var header = document.getElementById('header');

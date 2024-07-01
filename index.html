@@ -53,11 +53,39 @@
     text-align: center;
   }
 
+
+  #loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
   
 </style>
 
 <body>
-
+  <div id="loading-screen">
+    <div class="loader"></div>
+</div>
   <header id="header">
     <div class="container">
       <!-- <a href="#header" class="cursor" >Home<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a> -->
@@ -134,7 +162,7 @@
         </div>
         <div class="image-text">
           <p style="color: hsl(0, 0%, 100%); font-size: 25px; font-weight: bold; margin-bottom: 10px;">Rajeev Kumar
-            Behera</p>
+            Behera<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></p>
           <p style="color: #8742F5; font-size: 15px; margin: 0;">Software Developer</p>
         </div>
 
@@ -145,7 +173,7 @@
   </section>
   <section id="proHead">
     <p class="sheading">
-      Projects
+      Projects<b class="semicolon">;</b>
       <span
         style="position: absolute; bottom: -10px; left: 0; width: 10%; height: 6px; background-color: #6c1fe8;"></span>
     </p>
@@ -214,7 +242,7 @@
 
   <section id="achivements" class="hero">
     <p class="Aheading">
-      Achivements
+      Achivements<b class="semicolon">;</b>
       <span
         style="position: absolute; bottom: -10px; left: 0; width: 15%; height: 6px; background-color: #6c1fe8;"></span>
     </p>
@@ -225,7 +253,7 @@
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium1.png?alt=media&token=e22aaa8c-aa1b-42a3-9d29-a7963ab20de9"
             style="object-fit: cover;" alt="Project Image">
           <div class="text">
-            <h2>Symposium 2023 Winner</h2>
+            <h2>Symposium 2023 Winner<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
             <p>We are thankful that our amazing project Yatra 360 won Symposium 2023 at ITER! Our innovative
               implementation of CBIR and QBE
               for indoor navigation systems, complete with advanced 3D image mapping, has captured the attention of
@@ -242,7 +270,7 @@
       <div class="a2">
         <div class="achievement-card">
           <div class="text">
-            <h2>D<sup>3</sup> Fest Hackathon Winner 2023</h2>
+            <h2>D<sup>3</sup> Fest Hackathon Winner 2023<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
             <p>"Patrologix" my team, won The Geek O Thon, a 24-hour intense hackathon by GeeksforGeeks and IIIT
               Bhubanswar at D3fest 2023!
               During our trip, a winning prototype was produced within 24 hours to earn a spot in the final round. The
@@ -264,7 +292,7 @@
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/DSC_1434.png?alt=media&token=caf720e5-1577-4a9c-a633-b26d6a8d9369"
             style="object-fit: cover;" alt="Project Image">
           <div class="text">
-            <h2>iFlashers</h2>
+            <h2>iFlashers<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
             <p>In this dynamic visualization, iFlashers unveils its sophisticated indoor navigation service, bypassing
               the limitations
               of traditional GPS and the internet, using Bluetooth beacons for real-time location tracking When needed
@@ -282,7 +310,7 @@
       <div class="a4">
         <div class="achievement-card">
           <div class="text">
-            <h2>InnovateOdisha Hackathon</h2>
+            <h2>InnovateOdisha Hackathon<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
             <p>Our team participated in the InnovateOdisha Hackathon, organized by NIT BBSR and Karkhana. It was an
               incredible experience where we spent 24 hours non-stop coding and developing our project. We worked on an
               indoor navigation app using BLE technology and received valuable feedback and suggestions for improvement.
@@ -301,7 +329,7 @@
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/WhatsApp%20Image%202024-04-27%20at%2022.43.57_bb70b429.jpg?alt=media&token=d5bbec97-d744-48a2-be95-befacea4b977"
             style="object-fit: cover;" alt="Project Image">
           <div class="text">
-            <h2>SOA Proxima 2024</h2>
+            <h2>SOA Proxima 2024<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
             <p>Team Patrologix is proud to introduce Sentinex, an innovative project that was born out of resilience and
               unity, with the goal of enhancing community safety. It all started with a triumphant win at the hackathon
               hosted by IIIT Bhubaneswar. Since then, Sentinex has continued to evolve, thanks to platforms like Vimarsh
@@ -508,7 +536,7 @@
 
   <section>
     <div class="tictac-content" id="tictac">
-      <h1>Beat me at this</h1>
+      <h1>Beat me at this<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h1>
       <button onclick="startGame()">Start Game</button>
       <div class="board" id="board"></div>
       <p id="turn-info"></p>
@@ -518,7 +546,7 @@
 
   <footer>
     <section id="contact" style="text-align: center; ">
-      <h2>Contact Me</h2>
+      <h2>Contact Me<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
       <a href="https://www.linkedin.com/in/rajeev-kumar-behera-36403428b/" class="fa fa-linkedin"></a>
       <a href="https://github.com/yesiamrajeev" class="fa fa-github"></a>
       <a href="mailto:rajeev.220077@gmail.com" class="fa fa-google"></a>
