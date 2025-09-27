@@ -4,23 +4,36 @@ import json
 with open("contributors.json", "r", encoding="utf-8") as f:
     contributors = json.load(f)
 
-# Build contributors markdown
-maintainers = []
-contributors_list = []
+# Build contributors table
+rows = []
+row = []
 
-for person in contributors:
+for i, person in enumerate(contributors, start=1):
     if not person["name"].strip():
-        continue  # skip empty entries
-    
-    block = f'''<a href="{person["github"]}">
-  <img src="{person["avatar"]}" width="80" style="border-radius:50%"/>
-</a>  
-**{person["name"]}** – [GitHub]({person["github"]})  
+        continue
+
+    block = f'''
+<td align="center">
+  <a href="{person["github"]}">
+    <img src="{person["avatar"]}" width="100" style="border-radius:50%"/><br/>
+    <sub><b>{person["name"]}</b></sub><br/>
+    <sub>{person["role"]}</sub>
+  </a>
+</td>
 '''
-    if person["role"].lower() == "maintainer":
-        maintainers.append(block)
-    else:
-        contributors_list.append(block)
+    row.append(block)
+
+    # if row filled 6 columns, push it
+    if i % 6 == 0:
+        rows.append("<tr>" + "".join(row) + "</tr>")
+        row = []
+
+# leftover contributors if less than 6
+if row:
+    rows.append("<tr>" + "".join(row) + "</tr>")
+
+# Build markdown section
+table_html = "<table>\n" + "\n".join(rows) + "\n</table>"
 
 # Read README.md
 with open("README.md", "r", encoding="utf-8") as f:
@@ -33,13 +46,10 @@ end_marker = "<!-- CONTRIBUTORS END -->"
 before = readme.split(start_marker)[0]
 after = readme.split(end_marker)[1] if end_marker in readme else ""
 
-new_section = start_marker + "\n\n"
-if maintainers:
-    new_section += "### Maintainers\n\n" + "\n---\n".join(maintainers) + "\n\n"
-if contributors_list:
-    new_section += "### Contributors\n\n" + "\n---\n".join(contributors_list) + "\n\n"
-new_section += end_marker
+new_section = start_marker + "\n\n" + table_html + "\n\n" + end_marker
 
 # Write updated README
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(before + new_section + after)
+
+print("✅ README.md updated with contributors table.")
