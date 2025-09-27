@@ -49,7 +49,18 @@ You can add your own touch by improving, enhancing, or personalizing sections of
 
 ## 🌐 Example Contributions  
 
-- Add your profile in `contributors/` folder.  
+- Add your profile in `contributors.json` file.
+- Copy the following schema, add your details and paste it in the contributors.json appropriately.
+ ```bash
+    ,
+  {
+    "name": "",
+    "github": "",
+    "role": "Contributor",
+    "avatar": ""
+  }
+   ```
+
 - Improve portfolio sections like **About Me, Projects, Skills, Contact**.  
 - Add new animations or design improvements.  
 - Fix typos or formatting.  
