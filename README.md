@@ -73,16 +73,14 @@ This repository is open for contributions, but only those changes that improve o
 
 ---
 
-## 👥 Contributors  
+# 🚀 Contributors
 
-<!-- CONTRIBUTOR-LIST:START -->
-| Avatar | Name | Role | GitHub |
-|--------|------|------|--------|
-| <img src="https://avatars.githubusercontent.com/u/125568812?s=400&u=e3c86ca01302bbb26860a239218f676f6cc1604e&v=4" width="80" height="80" style="border-radius:50%"/> | **Rajeev Kumar Behera** | Maintainer | [GitHub](https://github.com/yesiamrajeev) |
-| <img src="https://avatars.githubusercontent.com/u/132124215?v=4" width="80" height="80" style="border-radius:50%"/> | **Sarbani Maharana** | Contributor | [GitHub](https://github.com/Maharanasarbani) |
-| <img src="" width="80" height="80" style="border-radius:50%"/> | **(Coming Soon)** | Contributor | - |
-<!-- CONTRIBUTOR-LIST:END -->
+Thanks go to these **Wonderful People** 👨🏻‍💻  
+
+<!-- CONTRIBUTORS START -->
+<!-- CONTRIBUTORS END -->
 
 ---
 
-✨ Want to join? Open a PR to add yourself to `contributions.json`!
+✨ Want to join? Open a PR to add yourself to `contributors.json`!
+
