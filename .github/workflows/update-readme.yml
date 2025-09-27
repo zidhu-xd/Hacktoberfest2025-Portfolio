@@ -4,12 +4,16 @@ on:
   push:
     paths:
       - "contributors.json"
+  pull_request:
+    paths:
+      - "contributors.json"
 
 jobs:
-  build:
+  update-readme:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -21,10 +25,10 @@ jobs:
         run: |
           python update_readme.py
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "chore: update README from contributors.json" || echo "No changes"
+          git commit -m "🔄 Update README with contributors" || echo "No changes to commit"
           git push
