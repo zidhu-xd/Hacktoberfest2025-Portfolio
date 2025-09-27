@@ -17,7 +17,7 @@ for i, person in enumerate(contributors, start=1):
   <a href="{person["github"]}">
     <img src="{person["avatar"]}" width="100" style="border-radius:50%"/><br/>
     <sub><b>{person["name"]}</b></sub><br/>
-    <sub>{person["role"]}</sub>
+    <p>{person["role"]}</p>
   </a>
 </td>
 '''
