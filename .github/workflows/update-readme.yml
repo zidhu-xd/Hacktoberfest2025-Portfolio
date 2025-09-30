@@ -14,7 +14,7 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    if: github.repository == 'yesiamrajeev/Hacktoberfest2025-Portfolio' 
+    # if: github.repository == 'yesiamrajeev/Hacktoberfest2025-Portfolio' 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
