@@ -1,4 +1,3 @@
----
 
 # 🌟 Contributing to Hacktoberfest2024🧑‍💻
 
@@ -157,5 +156,3 @@ We appreciate every contribution, no matter the size. Thank you for your time an
 - [Hacktoberfest Official Website](https://hacktoberfest.com)
 - [How to Create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
 - [Markdown Guide](https://www.markdownguide.org)
-
----
