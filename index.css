@@ -170,6 +170,29 @@
   z-index: 1000;
 }
 
+
+.container a:hover {
+  color: #f57a4d; /* orange on hover */
+}
+
+.container a {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container a {
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.container a:hover {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .container a {
   display: inline-block;
   color: white;
