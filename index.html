@@ -944,10 +944,10 @@
             if (name && emailid && msgContent) {
               saveMessages(name, emailid, msgContent);
 
-              document.querySelector(".alert").style.display = "block";
+              document.querySelector(".alert").classList.add("show");
 
               setTimeout(() => {
-                document.querySelector(".alert").style.display = "none";
+                document.querySelector(".alert").classList.remove("show");
               }, 3000);
 
               document.getElementById("contactForm").reset();
@@ -1038,5 +1038,10 @@
         </div>
       </div>
     </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-top-btn" title="Back to Top">
+      <i class="fa fa-chevron-up"></i>
+    </button>
   </body>
 </html>
