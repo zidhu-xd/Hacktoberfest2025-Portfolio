@@ -141,6 +141,15 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
 </td>
 
 <td align="center">
+  <a href="sakshi-sonii">
+    <img src="https://in.pinterest.com/pin/140806234311366/" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Sakshi Soni</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+</tr>
+<tr>
+<td align="center">
   <a href="ChiefPatwal">
     <img src="https://avatars.githubusercontent.com/u/120747214?v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Pankaj Patwal</b></sub><br/>
