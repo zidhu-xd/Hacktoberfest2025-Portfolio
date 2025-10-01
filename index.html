@@ -548,30 +548,111 @@
   </section>
 
   <footer>
-    <section id="contact" style="text-align: center; ">
-      <h2>Contact Me<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
-      <a href="https://www.linkedin.com/in/rajeev-kumar-behera-36403428b/" class="fa fa-linkedin"></a>
-      <a href="https://github.com/yesiamrajeev" class="fa fa-github"></a>
-      <a href="mailto:rajeev.220077@gmail.com" class="fa fa-google"></a>
-      <a href="https://www.instagram.com/yes._.i._.am/" class="fa fa-instagram"></a>
-      <div id="contactForm1">
-        <form action="" id="contactForm">
-          <div class="alert" style="display:none;">Your message sent</div>
-          <div class="success-alert" style="display:none;">Message sent successfully!</div>
+    <section id="contact">
+      <div class="contact-container">
+        <div class="contact-header">
+          <p class="sheading">
+            Contact Me<b class="semicolon">;</b>
+            <span style="position: absolute; bottom: -10px; left: 0; width: 15%; height: 6px; background-color: #6c1fe8;"></span>
+          </p>
+          <p class="contact-subtitle">Ready to start your next project? Let's build something amazing together!</p>
+        </div>
+        
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa fa-envelope"></i>
+              </div>
+              <h3>Email Me</h3>
+              <p>rajeev.220077@gmail.com</p>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa fa-code"></i>
+              </div>
+              <h3>Specialization</h3>
+              <p>Android & Web Development</p>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa fa-clock-o"></i>
+              </div>
+              <h3>Response Time</h3>
+              <p>Within 24 hours</p>
+            </div>
+          </div>
+          
+          <div class="contact-form-wrapper">
+            <div id="contactForm1">
+              <form action="" id="contactForm">
+                <div class="alert">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Your message has been sent successfully!</span>
+                </div>
+                <div class="success-alert">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Message sent successfully!</span>
+                </div>
 
-          <div class="inputBox">
-            <input type="text" id="name" placeholder="Your name" />
+                <div class="form-group">
+                  <div class="inputBox">
+                    <input type="text" id="name" placeholder=" " required />
+                    <label for="name">Full Name</label>
+                    <span class="input-border"></span>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="inputBox">
+                    <input type="email" id="emailid" placeholder=" " required />
+                    <label for="emailid">Email Address</label>
+                    <span class="input-border"></span>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="inputBox">
+                    <textarea id="msgContent" rows="6" placeholder=" " required></textarea>
+                    <label for="msgContent">Your Message</label>
+                    <span class="input-border"></span>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <button type="submit" class="submit-btn">
+                    <span class="btn-text">Send Message</span>
+                    <i class="fa fa-paper-plane btn-icon"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="inputBox">
-            <input type="email" id="emailid" placeholder="Your Email" />
+        </div>
+        
+        <div class="social-section">
+          <h3 class="social-title">Follow Me On</h3>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/rajeev-kumar-behera-36403428b/" class="social-link linkedin" title="LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="social-text">LinkedIn</span>
+            </a>
+            <a href="https://github.com/yesiamrajeev" class="social-link github" title="GitHub">
+              <i class="fa fa-github"></i>
+              <span class="social-text">GitHub</span>
+            </a>
+            <a href="mailto:rajeev.220077@gmail.com" class="social-link email" title="Email">
+              <i class="fa fa-envelope"></i>
+              <span class="social-text">Email</span>
+            </a>
+            <a href="https://www.instagram.com/yes._.i._.am/" class="social-link instagram" title="Instagram">
+              <i class="fa fa-instagram"></i>
+              <span class="social-text">Instagram</span>
+            </a>
           </div>
-          <div class="inputBox">
-            <textarea id="msgContent" cols="40" rows="5" placeholder="Message"></textarea>
-          </div>
-          <div class="inputBox">
-            <button type="submit">Submit</button>
-          </div>
-        </form>
+        </div>
       </div>
       <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
@@ -631,6 +712,51 @@
         const getElementVal = (id) => {
           return document.getElementById(id).value;
         };
+
+        // Enhanced form animations and interactions
+        document.addEventListener("DOMContentLoaded", function() {
+          // Add floating label animation
+          const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
+          
+          inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+              if (this.value !== '') {
+                this.classList.add('filled');
+              } else {
+                this.classList.remove('filled');
+              }
+            });
+          });
+          
+          // Add button loading state
+          const submitBtn = document.querySelector('.submit-btn');
+          const btnText = submitBtn.querySelector('.btn-text');
+          const btnIcon = submitBtn.querySelector('.btn-icon');
+          
+          document.getElementById('contactForm').addEventListener('submit', function() {
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending...';
+            btnIcon.className = 'fa fa-spinner fa-spin btn-icon';
+            
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              btnText.textContent = 'Send Message';
+              btnIcon.className = 'fa fa-paper-plane btn-icon';
+            }, 2000);
+          });
+          
+          // Add smooth scroll animation for contact section
+          const contactLinks = document.querySelectorAll('a[href="#contact"]');
+          contactLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              document.getElementById('contact').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            });
+          });
+        });
 
       </script>
     </section>
