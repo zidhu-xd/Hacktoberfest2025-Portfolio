@@ -117,6 +117,14 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
 </td>
 
 <td align="center">
+  <a href="https://github.com/Yajy">
+    <img src="https://avatars.githubusercontent.com/u/101127424?s=400&u=223d18fdddbced0735ef383c130c2e5362aedc92&v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Yajy Goswami</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
   <a href="https://github.com/iamironman-png">
     <img src="https://avatars.githubusercontent.com/u/209762838?s=400&u=14d6905ab765805f5242d743db8b98551eab5467&v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Git Ironman</b></sub><br/>
@@ -139,7 +147,8 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
-
+</tr>
+<tr>
 <td align="center">
   <a href="sakshi-sonii">
     <img src="https://in.pinterest.com/pin/140806234311366/" width="100" style="border-radius:50%"/><br/>
@@ -147,8 +156,7 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
-</tr>
-<tr>
+
 <td align="center">
   <a href="ChiefPatwal">
     <img src="https://avatars.githubusercontent.com/u/120747214?v=4" width="100" style="border-radius:50%"/><br/>
