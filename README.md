@@ -139,6 +139,14 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
+
+<td align="center">
+  <a href="ChiefPatwal">
+    <img src="https://avatars.githubusercontent.com/u/120747214?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Pankaj Patwal</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
 </tr>
 </table>
 
