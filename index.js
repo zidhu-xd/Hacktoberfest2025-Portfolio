@@ -374,13 +374,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       scrollToTopBtn.classList.add('hide');
       scrollToTopBtn.classList.remove('show');
-      
-      // Hide the button after animation
-      setTimeout(() => {
-        if (scrollToTopBtn.classList.contains('hide')) {
-          scrollToTopBtn.style.display = 'none';
-        }
-      }, 300);
     }
   });
   
