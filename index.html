@@ -152,6 +152,7 @@
           </div>
         </section> -->
     </header>
+
     <section id="home">
       <div class="content-container">
         <div class="text-content">
@@ -383,7 +384,7 @@
                 present our new ideas to esteemed judges. <br />
                 <br />
                 Sincere thanks to our teammates Sohan Mohanty, Dharmesh Raj and
-                Yajy Goswami for playing an important role in our victory. Our
+                Yajy Goswami (aka DevOps God) for playing an important role in our victory. Our
                 project that empowers communities for security and connectivity.
               </p>
             </div>
@@ -638,7 +639,7 @@
 
       <div class="card animate-on-scroll">
         <img
-          src="https://flask.palletsprojects.com/en/2.0.x/_images/flask-logo.png"
+          src="imgproject\FlaskLogo.jpeg"
           alt="Flask Logo"
           class="logo"
         />
@@ -765,6 +766,23 @@
     </section>
 
     <footer>
+     <div class="visitor-counter-container">
+  <div class="visitor-counter">
+    <div class="counter-header">
+      <div class="counter-icon"></div>
+
+    </div>
+    <div class="counter-stats">
+      <div class="stat-item" style="text-align: center;">
+        <img 
+          src="https://hits.sh/github.com/yesiamrajeev/portfolio.svg?style=flat&label=Total%20Visits&extraCount=0&color=f57a4d&labelColor=5c0a0a" 
+          alt="Visitor Counter"
+          style="height: 30px; margin-top: 5px;">
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
       <section id="contact">
         <div class="contact-container">
           <div class="contact-header">
@@ -944,10 +962,10 @@
             if (name && emailid && msgContent) {
               saveMessages(name, emailid, msgContent);
 
-              document.querySelector(".alert").style.display = "block";
+              document.querySelector(".alert").classList.add("show");
 
               setTimeout(() => {
-                document.querySelector(".alert").style.display = "none";
+                document.querySelector(".alert").classList.remove("show");
               }, 3000);
 
               document.getElementById("contactForm").reset();
@@ -1038,5 +1056,10 @@
         </div>
       </div>
     </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-top-btn" title="Back to Top">
+      <i class="fa fa-chevron-up"></i>
+    </button>
   </body>
 </html>
