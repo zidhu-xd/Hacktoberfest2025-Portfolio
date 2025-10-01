@@ -123,6 +123,14 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
+
+<td align="center">
+  <a href="https://github.com/VanshikaNegii">
+    <img src="https://avatars.githubusercontent.com/u/105164226?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>GSSoC'25 VANSHIKA NEGI </b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
 </tr>
 </table>
 
