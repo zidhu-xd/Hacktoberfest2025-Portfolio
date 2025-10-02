@@ -1284,6 +1284,7 @@
   transition: all 0.3s ease;
   resize: vertical;
   min-height: 50px;
+  box-sizing: border-box;
 }
 
 .inputBox input:focus,
